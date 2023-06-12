@@ -11,8 +11,12 @@
 
 .cell {
   text-align: left;
-  border-right: 1px solid #eee;
   padding: 0 15px;
+  font-weight: 600;
+}
+
+.numeric {
+  text-align: right;
 }
 
 .cell sub {
@@ -20,4 +24,13 @@
   font-size: 0.8rem;
   color: #999;
   margin-bottom: 5px;
+}
+
+.cell a {
+  color: #246ac1;
+  text-decoration: none;
+}
+
+.cell a:hover {
+  color: #0c2340;
 }

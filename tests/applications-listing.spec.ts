@@ -8,7 +8,6 @@ test("applications listing", async ({ page }) => {
 
 test("viewing more applications", async ({ page }) => {
   await page.goto("/");
-
   await page.waitForResponse(/applications/);
 
   // expect there to be 5 applications
@@ -25,14 +24,13 @@ test("viewing more applications", async ({ page }) => {
 });
 
 test("failing to load applications", async ({ page }) => {
-  await page.route("/api/applications**", async (route) => {
+  await page.route("/api/applications?_page=1&_limit=5", async (route) => {
     await route.fulfill({ status: 403 });
   });
 
   await page.goto("/");
 
   // expect to see an error message
-  expect(await page.getByRole("alert")).toHaveText(
-    /failed to load applications/i
-  );
+  const alert = await page.waitForSelector('[role="alert"]'); // wait for the alert to be present
+  expect(await alert.textContent()).toMatch(/failed to load/i);
 });

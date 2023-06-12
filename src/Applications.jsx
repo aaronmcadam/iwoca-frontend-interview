@@ -29,20 +29,21 @@ const Applications = () => {
           first_name: application.first_name,
           last_name: application.last_name,
           email: application.email,
-          loan_amount: new Intl.NumberFormat("en-GB", {}).format(
-            application.loan_amount
-          ),
+          loan_amount: new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP",
+          }).format(application.loan_amount),
           date_created: new Date(application.date_created).toLocaleDateString(),
           expiry_date: new Date(application.expiry_date).toLocaleDateString(),
         }));
 
         setStatus("success");
-
         setApplications((currentApplications) => [
           ...currentApplications,
           ...parsedData,
         ]);
       } catch (error) {
+        console.error(error);
         setStatus("error");
       }
     }
@@ -61,7 +62,7 @@ const Applications = () => {
       ) : null}
       {status === "error" ? (
         <p role="alert" className={styles.Center}>
-          Failed to load applications.
+          Failed to load applications
         </p>
       ) : null}
       {status === "success" ? (
