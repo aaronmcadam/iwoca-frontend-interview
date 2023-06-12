@@ -1,47 +1,51 @@
 {
-    "name": "frontend-interview",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "FE-start": "react-scripts start",
-        "FE-build": "react-scripts build",
-        "test": "react-scripts test",
-        "BE-start": "node ./json-server/index.js",
-        "start": "concurrently --kill-others \"npm:BE-start\" \"npm:FE-start\""
-    },
-    "dependencies": {
-        "@faker-js/faker": "^6.0.0-alpha.7",
-        "@testing-library/jest-dom": "5.16.2",
-        "@testing-library/react": "12.1.3",
-        "@testing-library/user-event": "13.5.0",
-        "classnames": "2.3.1",
-        "json-server": "0.17.0",
-        "react": "17.0.2",
-        "react-dom": "17.0.2",
-        "react-hook-form": "7.27.1",
-        "react-scripts": "5.0.0",
-        "typescript": "^4.6.2",
-        "web-vitals": "2.1.4"
-    },
-    "devDependencies": {
-        "concurrently": "7.0.0"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    }
+  "name": "frontend-interview",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "FE-start": "react-scripts start",
+    "FE-build": "react-scripts build",
+    "test": "react-scripts test",
+    "BE-start": "node ./json-server/index.js",
+    "start": "concurrently --kill-others \"npm:BE-start\" \"npm:FE-start\"",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:debug": "playwright test --debug"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/react": "12.1.3",
+    "@testing-library/user-event": "13.5.0",
+    "classnames": "2.3.1",
+    "json-server": "0.17.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "7.27.1",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.6.2",
+    "web-vitals": "2.1.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.35.0",
+    "concurrently": "7.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
