@@ -23,11 +23,24 @@ const Applications = () => {
         }
 
         const data = await request.json();
+        const parsedData = data.map((application) => ({
+          id: application.id,
+          company: application.company,
+          first_name: application.first_name,
+          last_name: application.last_name,
+          email: application.email,
+          loan_amount: new Intl.NumberFormat("en-GB", {}).format(
+            application.loan_amount
+          ),
+          date_created: new Date(application.date_created).toLocaleDateString(),
+          expiry_date: new Date(application.expiry_date).toLocaleDateString(),
+        }));
+
         setStatus("success");
 
         setApplications((currentApplications) => [
           ...currentApplications,
-          ...data,
+          ...parsedData,
         ]);
       } catch (error) {
         setStatus("error");
