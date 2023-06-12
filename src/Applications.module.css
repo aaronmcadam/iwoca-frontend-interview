@@ -3,3 +3,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.Actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
