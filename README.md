@@ -32,3 +32,9 @@ see attached [Figma Link](https://www.figma.com/file/5NOBLAgL17n4qoR82vhYY5/iwoc
 - All the tickets features are for desktop but we would be very happy to see mobile considered.
 - Remember to check your project runs before submitting. - we will be running it in development mode to review.
 - Feel free to refactor the code where appropriate.
+
+## Tasks
+
+- `npm run e2e`: Run the Playwright tests
+- `npm run e2e:ui`: Open the Playwright interactive test runner
+- `npm run e2e:debug`: Run the Playwright tests in debug mode
